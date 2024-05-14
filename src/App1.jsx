@@ -23,22 +23,10 @@ const CountController2 = (props) => {
 }
 
 const App = () => {
-  // const {counter: counter1, handleCounterDec: handleCounterDec1, handleCounterInc: handleCounterInc1} = useCounter({inital: 4}); 
-  // const {counter: counter2, handleCounterDec: handleCounterDec2, handleCounterInc: handleCounterInc2} = useCounter({inital: 5});
  
   return (
     <div>
       <h1>App</h1>
-      {/* <CountController 
-        counter = {counter1}
-        handleCounterInc = {handleCounterInc1}
-        handleCounterDec={handleCounterDec1}
-      />
-      <CountController 
-        counter = {counter2}
-        handleCounterInc = {handleCounterInc2}
-        handleCounterDec={handleCounterDec2}
-      /> */}
       <CountController2 lowerBound={-10}/>
       <CountController2 />
       <CountController2 />

@@ -1,33 +1,25 @@
-import useFetchData from "./hooks/useFetchData";
+import styled from 'styled-components';
+const BaseButton = styled.button`
+    border: none;
+    outline: none;
+    border-radius: 0.15rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+`;
+
+const PrimaryButton = styled(BaseButton)`
+    background: red;
+    color: white;
+`;
 
 const App = () => {
-    const users = useFetchData('https://jsonplaceholder.typicode.com/users', 
-        (data) => data.map((item) => ({ id: item.id, name: item.name })) 
-    );
-    const posts = useFetchData('https://jsonplaceholder.typicode.com/posts');
-
-    return (
-        <div style={{ width: "500px", display: 'flex', gap: '1rem', justifyContent: 'space-between'}}>
-            <div>
-                <h1>Users</h1>
-                <hr />
-                {users.loading && <h3>Loading...</h3>}
-                {users.error && <h3>{users.error}</h3>}
-                {users.data.map(user => (
-                    <li key={user.id}>{user.name}</li>
-                ))}
-            </div>
-            <div>
-                <h1>Posts</h1>
-                <hr />
-                {posts.loading && <h3>Loading...</h3>}
-                {posts.error && <h3>{posts.error}</h3>}
-                {posts.data.map((post) => (
-                    <li key={post.id}>{post.title}</li>
-                ))}
-            </div>
-        </div>
-    );
+    return <div>
+        <h1>styled componet</h1>
+        <BaseButton dark>I'm a button</BaseButton>
+        <PrimaryButton>I'm primary button</PrimaryButton>
+    </div>
 }
-
 export default App;
